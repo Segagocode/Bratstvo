@@ -1,0 +1,13 @@
+.indev {
+    position: absolute;
+    top: 25%;
+    left: 12%;
+    width: 1200px;
+    height: 300px;
+}
+.indevt {
+    color: turquoise;
+}
+body {
+    background-color: black;
+}
