@@ -65,3 +65,69 @@ input:checked + .slider:before {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
+.nav {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav-link {
+    position: relative;
+    display: inline-flex;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-size: 0.875rem;
+    color: inherit;
+  }
+  
+  .nav-link-title {
+    position: relative;
+  }
+  
+  /* Pills */
+  
+  .nav-link-pill {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+  
+  .nav-link-pill::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: gainsboro;
+    border-radius: .25rem;
+    opacity: 0;
+    visibility: hidden;
+    transition-property: visibility, opacity, transform;
+    transition-duration: 0.25s;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .nav-link-pill::before {
+      transition: none;
+    }
+  }
+  
+  .nav-link:hover > .nav-link-pill::before {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .nav-link:has(~ .nav-link:hover) > .nav-link-pill::before {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+  
+  .nav-link:hover ~ .nav-link > .nav-link-pill::before {
+    opacity: 1;
+    transform: translateX(-100%);
+  }
+  
+  .nav-link:has(~ .nav-link + .nav-link:hover) > .nav-link-pill::before {
+    transition: none;
+  }
+  
+  .nav-link:hover + .nav-link ~ .nav-link > .nav-link-pill::before {
+    transition: none;
+  }
