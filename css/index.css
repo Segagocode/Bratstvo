@@ -64,6 +64,8 @@ input:checked + .slider:before {
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
+    text-color: Aqua;
+    background-color: 08552c;
 }
 .nav {
     display: flex;
